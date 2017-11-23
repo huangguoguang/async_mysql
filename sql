@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS huangguang DEFAULT CHARSET=utf8 COLLATE utf8_bin;
 DROP TABLE IF EXISTS t_student;
 CREATE TABLE `t_student` (
   `id` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,

@@ -60,4 +60,16 @@ public class Student {
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birth='" + birth + '\'' +
+                ", department='" + department + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

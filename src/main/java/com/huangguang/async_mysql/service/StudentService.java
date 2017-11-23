@@ -1,5 +1,6 @@
 package com.huangguang.async_mysql.service;
 
+import com.huangguang.async_mysql.entity.ResultMessage;
 import com.huangguang.async_mysql.entity.Student;
 
 import java.util.List;
@@ -14,4 +15,6 @@ import java.util.List;
 public interface StudentService {
 
     List<Student> getStudentList();
+
+    int save(Student student);
 }

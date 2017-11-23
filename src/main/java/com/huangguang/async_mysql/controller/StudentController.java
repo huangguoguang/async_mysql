@@ -1,8 +1,10 @@
 package com.huangguang.async_mysql.controller;
 
+import com.huangguang.async_mysql.entity.ResultMessage;
 import com.huangguang.async_mysql.entity.Student;
 import com.huangguang.async_mysql.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +28,19 @@ public class StudentController {
     public List<Student> getStudentList() {
         List<Student> list = studentService.getStudentList();
         return list;
+    }
+
+    @RequestMapping(value = "save")
+    public ResultMessage saveStudent(@ModelAttribute Student student) {
+        ResultMessage resultMessage = new ResultMessage();
+        try {
+           studentService.save(student);
+           resultMessage.setCode(200);
+           resultMessage.setMessage("成功");
+        } catch (Exception e) {
+            resultMessage.setCode(500);
+            resultMessage.setMessage("失败");
+        }
+        return resultMessage;
     }
 }

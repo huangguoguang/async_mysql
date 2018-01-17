@@ -2,6 +2,7 @@ package com.huangguang.async_mysql;
 
 import com.huangguang.async_mysql.entity.Student;
 import com.huangguang.async_mysql.service.StudentService;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableAsync
 @EnableScheduling
 @SpringBootApplication
+@MapperScan("com.huangguang.async_mysql.mapper")
 public class AsyncMysqlApplication {
 
 	@Autowired
@@ -20,10 +22,5 @@ public class AsyncMysqlApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AsyncMysqlApplication.class, args);
-	}
-
-	@Scheduled(fixedDelay = 10000)
-	public void save() {
-		studentService.save(new Student());
 	}
 }

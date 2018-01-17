@@ -114,4 +114,10 @@
       </if>
     </where>
   </select>
+
+  <select id="insertPro" parameterType="com.huangguang.async_mysql.entity.Student" statementType="CALLABLE">
+    <![CDATA[
+       {call insertStudent(#{id, mode=IN, jdbcType=VARCHAR}, #{name, mode=IN, jdbcType=VARCHAR})}
+    ]]>
+  </select>
 </mapper>

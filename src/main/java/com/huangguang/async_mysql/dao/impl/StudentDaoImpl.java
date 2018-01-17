@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class StudentDaoImpl implements StudentDao {
 
-    @Mapper
+    @Autowired
     StudentMapper studentMapper;
 
     @Override
@@ -34,5 +34,11 @@ public class StudentDaoImpl implements StudentDao {
         int i = studentMapper.insert(student);
         //Thread.sleep(50 * 1000);
         return i;
+    }
+
+    @Override
+    public void insertPro(Student student) {
+        System.out.println("准备调用存储过程");
+        studentMapper.insertPro(student);
     }
 }

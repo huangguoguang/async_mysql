@@ -4,7 +4,7 @@ import com.huangguang.async_mysql.entity.Score;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-@Mapper
+@Repository
 public interface ScoreMapper {
     int deleteByPrimaryKey(String id);
 

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
+@Repository
 public interface StudentMapper {
     int deleteByPrimaryKey(String id);
 
@@ -21,4 +21,6 @@ public interface StudentMapper {
     int updateByPrimaryKey(Student record);
 
     List<Student> getStudentList(Student student);
+
+    void insertPro(Student student);
 }

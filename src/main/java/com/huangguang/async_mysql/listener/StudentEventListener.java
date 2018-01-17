@@ -33,7 +33,8 @@ public class StudentEventListener {
             StudentEvent studentEvent = (StudentEvent) event;
             Student student = (Student) studentEvent.getSource();
             logger.info(student.toString());
-            studentDao.save(student);
+//            studentDao.save(student);
+            studentDao.insertPro(student);
         }
     }
 }

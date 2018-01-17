@@ -17,4 +17,8 @@ public interface StudentDao {
 
 
     int save(Student student);
+
+
+    //模拟调用存储过程
+    void insertPro(Student student);
 }
